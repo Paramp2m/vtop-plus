@@ -1,0 +1,29 @@
+{
+  "name": "viboot-firefox",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Firefox / Zen port of ViBoot for vtop.vit.ac.in",
+  "scripts": {
+    "lint": "web-ext lint --source-dir src",
+    "build": "web-ext build --source-dir src --ignore-files CLAUDE.md --artifacts-dir dist --overwrite-dest",
+    "package": "web-ext lint --source-dir src && web-ext build --source-dir src --ignore-files CLAUDE.md --artifacts-dir dist/release --filename \"vtop-plus-{version}.xpi\" --overwrite-dest",
+    "sign": "web-ext sign --channel unlisted --source-dir src --artifacts-dir dist/signed",
+    "build:dev": "node tools/make-dev.mjs",
+    "test": "node --test test/",
+    "fixtures": "node tools/serve-fixtures.mjs",
+    "browser": "node tools/browser.mjs",
+    "start": "web-ext run --source-dir src --firefox /usr/lib/firefox-developer-edition/firefox --start-url http://127.0.0.1:8737/",
+    "start:zen": "web-ext run --source-dir src --firefox /opt/zen-browser-bin/zen-bin --start-url http://127.0.0.1:8737/",
+    "hello:lint": "web-ext lint --source-dir hello-world",
+    "hello:start": "web-ext run --source-dir hello-world --firefox /usr/lib/firefox-developer-edition/firefox --start-url https://example.com/",
+    "audit": "node .claude/hooks/vtop-guard/audit.mjs",
+    "audit:server": "node .claude/hooks/vtop-guard/audit-server.mjs",
+    "guard:rules": "node tools/extract-fields.mjs",
+    "guard:test-build": "node .claude/hooks/vtop-guard/make-test.mjs",
+    "guard:test-server": "VTOP_AUDIT_DIR=logs/vtop-audit-test node .claude/hooks/vtop-guard/audit-server.mjs --test"
+  },
+  "devDependencies": {
+    "@mozilla/firefox-devtools-mcp": "0.10.5",
+    "web-ext": "10.7.0"
+  }
+}

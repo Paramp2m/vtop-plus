@@ -1,0 +1,40 @@
+# Allowlist: ignore everything, then publish only what is listed below.
+/*
+!/.gitignore
+!/LICENSE
+!/NOTICE
+!/README.md
+!/package.json
+!/package-lock.json
+
+# Extension source (minus AI notes)
+!/src/
+/src/**/CLAUDE.md
+
+# Public unit tests only (pure logic; no fixtures, no guard)
+!/test/
+/test/*
+!/test/smoke.test.mjs
+!/test/attendance-math.test.mjs
+!/test/captcha-solve.test.mjs
+!/test/da-dues.test.mjs
+!/test/dates.test.mjs
+!/test/marks-math.test.mjs
+
+# Provenance of the captcha model
+!/tools/
+/tools/*
+!/tools/extract-captcha-model.mjs
+
+# Belt and braces, wherever they appear
+CLAUDE.md
+CLAUDE.local.md
+.env*
+*.xpi
+*.zip
+.session-secret
+session.json
+*.jsonl
+node_modules/
+dist/
+.DS_Store

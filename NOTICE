@@ -1,0 +1,19 @@
+VTOP Plus
+Copyright (c) 2026 Param
+
+VTOP Plus is a Firefox port of ViBoot 2.1.15 by Manjunadha Abhinai (ViTrendz),
+a Chrome extension for VIT's VTOP student portal.
+
+ViBoot is published without a licence. The following parts of this repository
+are derived from it, remain the copyright of ViTrendz, and are NOT licensed
+under the MIT licence in LICENSE:
+
+  - src/content/captcha/model.js (ViBoot's captcha model weights and biases,
+    extracted by tools/extract-captcha-model.mjs)
+  - code in src/ that was copied from ViBoot and adapted; each adaptation is
+    marked with a "// port:" comment citing the original file and line
+
+Everything else is the original work of Param and is licensed under MIT.
+
+VTOP Plus is unofficial. It is not affiliated with, endorsed by or supported
+by VIT (Vellore Institute of Technology) or ViTrendz.

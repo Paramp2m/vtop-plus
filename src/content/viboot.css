@@ -1,0 +1,83 @@
+/* VTOP Plus styles. */
+
+/* Quick-nav bar (features/navbar.js). port: the reference set these inline on
+   each button (ref/Viboot/js/navbar.js:29-41). */
+/* port: one row that never wraps and never shrinks below its buttons; at
+   ~1260 px the header is tight and the reference's inline-block bar broke
+   onto two lines on live VTOP (2026-10-15). */
+#vtop-plus-navbar {
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+  align-items: center;
+  white-space: nowrap;
+}
+
+#vtop-plus-navbar > .btn {
+  background: rgba(13, 110, 253, 0);
+  border-style: none;
+  padding: 0.25rem 0.4rem;
+  font-size: 0.9rem;
+}
+
+/* The reference's spacer before the buttons (navbar.js:27): its padding
+   alone made the header wrap at ~1260 px, so it takes no room here. */
+#vtop-plus-navbar > .navbar-text {
+  display: none;
+}
+
+/* Attendance alert (features/attendance.js). Cell rules carry the table id so
+   they beat Bootstrap's .table cell background. port: the reference set these
+   inline (ref/Viboot/js/attendance.js:23, 28-31, 77-124). */
+.vtop-plus-att-caution {
+  color: #32750e;
+  background: #f7f710;
+  width: 950px;
+  /* port: the fixed 950 px overflowed narrow windows. */
+  max-width: 100%;
+  font-size: 1.25rem;
+}
+
+.vtop-plus-att-legend > p + p {
+  margin-top: -10px;
+}
+
+.vtop-plus-att-legend > .vtop-plus-att-green { color: rgb(34, 144, 62); }
+.vtop-plus-att-legend > .vtop-plus-att-orange { color: rgb(255, 171, 16); }
+.vtop-plus-att-legend > .vtop-plus-att-red { color: rgb(238, 75, 43); }
+
+#AttendanceDetailDataTable td.vtop-plus-att-cell {
+  vertical-align: middle;
+  border: 1px solid #b2b2b2;
+  padding: 5px;
+}
+
+#AttendanceDetailDataTable td.vtop-plus-att-cell > p {
+  margin: 0;
+}
+
+#AttendanceDetailDataTable td.vtop-plus-att-red { background: rgba(238, 75, 43, 0.7); }
+#AttendanceDetailDataTable td.vtop-plus-att-orange { background: rgb(255, 171, 16); }
+#AttendanceDetailDataTable td.vtop-plus-att-green { background: rgba(170, 255, 0, 0.7); }
+
+/* Marks totals and FAT target (features/marks.js). Rules carry the table
+   class so they beat VTOP's row colours. port: the reference set these
+   inline (ref/Viboot/js/marks_page.js:47, 84, 92, 104). */
+.customTable-level1 tr.vtop-plus-marks-total { background: rgba(60, 141, 188, 0.8); }
+.customTable-level1 tr.vtop-plus-marks-pass { background: rgba(170, 255, 0, 0.6); }
+.customTable-level1 tr.vtop-plus-marks-need { background: rgba(255, 0, 0, 0.6); }
+.customTable-level1 tr.vtop-plus-marks-fat > td { text-align: center; }
+
+/* DA list (features/da-list.js, da-sort.js). */
+/* port: the reference's hint was styled inline (ref/Viboot/js/da_upload.js:212). */
+.vtop-plus-da-hint {
+  color: red;
+}
+
+.vtop-plus-da-sortable {
+  cursor: pointer;
+}
+
+.vtop-plus-da-error {
+  color: #b02a37;
+}
